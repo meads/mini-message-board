@@ -9,13 +9,14 @@
 </head>
 <body>
     <h1><%= title %></h1>
+    <%- include("partials/errors.ejs") %>
     <div class="form-container">
         <form method="POST" action="/new">
-            <label for="author">Author</label>
-            <input type="text" name="messageUser" id="author">
+            <label for="user">User</label>
+            <input type="text" name="messageUser" id="user" value="<%= locals.messageUser %>">
     
             <label for="text">Message</label>
-            <textarea name="messageText" id="text"></textarea>
+            <textarea name="messageText" id="text"><%= locals.messageText %></textarea>
     
             <input type="submit" value="SUBMIT">
         </form>
